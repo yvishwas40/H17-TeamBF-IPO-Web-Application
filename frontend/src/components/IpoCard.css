@@ -1,0 +1,13 @@
+.ipo-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .ipo-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
