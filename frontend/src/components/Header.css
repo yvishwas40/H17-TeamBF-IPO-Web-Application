@@ -1,0 +1,17 @@
+.header {
+  background-color: #333;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.nav-bar {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-bar span {
+  cursor: pointer;
+}
