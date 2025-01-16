@@ -1,52 +1,24 @@
-import React from 'react';
-import Header from './components/Header';
-import IpoCard from './components/IpoCard';
-import FaqItem from './components/FaqItem';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import Login from './Login';
+import ForgotPassword from './Forgotpassword';
+import Signup from './Signup';
+import './Login';
 
-const App = () => {
-  const faqs = [
-    "How many lots should I apply for IPO?",
-    "What is IPO GMP?",
-    "Who decides the IPO price band?",
-    "How is the lot size calculated?",
-  ];
+function App() {
+  const [activeForm, setActiveForm] = useState('login');
 
-  const ipoData = [
-    {
-      title: "PKH Ventures Ltd.",
-      priceBand: "Not Issued",
-      issueSize: "Not Issued",
-      issueType: "Book Built",
-      listingDate: "Not Issued",
-      status: "CLOSE",
-    },
-    {
-      title: "Wellness Forever",
-      priceBand: "Not Issued",
-      issueSize: "Not Issued",
-      issueType: "Book Built",
-      listingDate: "Not Issued",
-      status: "CLOSE",
-    },
-  ];
+  const handleFormSwitch = (formName) => {
+    setActiveForm(formName);
+  };
 
   return (
-    <div className="app">
-      <Header />
-      <div className="ipo-section">
-        {ipoData.map((ipo, index) => (
-          <IpoCard key={index} {...ipo} />
-        ))}
-      </div>
-      <div className="faq-section">
-        <h2>Frequently Asked Questions</h2>
-        {faqs.map((faq, index) => (
-          <FaqItem key={index} question={faq} />
-        ))}
-      </div>
+    <div className="app-container">
+      {activeForm === 'login' && <Login onSwitchForm={handleFormSwitch} />}
+      {activeForm === 'forgotPassword' && <ForgotPassword onSwitchForm={handleFormSwitch} />}
+      {activeForm === 'signup' && <Signup onSwitchForm={handleFormSwitch} />}
     </div>
   );
-};
+}
 
 export default App;

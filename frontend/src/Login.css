@@ -1,0 +1,105 @@
+/* Login.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.logo {
+  width: 200px;
+  margin: 0 auto 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-bottom: 15px;
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox-wrapper input {
+  margin: 0; 
+}
+
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.btn.google {
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 500px;
+    padding: 50px 100px;
+    height: auto;
+  }
+}

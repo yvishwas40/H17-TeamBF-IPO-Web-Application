@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,12 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-} */
-.app {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-.ipo-section, .faq-section {
-  margin: 20px 0;
 }
