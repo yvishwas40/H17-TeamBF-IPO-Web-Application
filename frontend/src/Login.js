@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import "./Login.css";
 import logo from "./Images/logo-placeholder.png";
 import ReCAPTCHA from "react-google-recaptcha";
+import { GoogleLogin } from '@react-oauth/google';
+import jwt_decode from 'jwt-decode';
 
 const Login = ({ onSwitchForm }) => {
   const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [error, setError] = useState('');
 
   const handleCaptchaChange = (value) => {
     setCaptchaVerified(!!value); 
@@ -18,6 +21,47 @@ const Login = ({ onSwitchForm }) => {
       return;
     }
     alert("Form submitted successfully!");
+  };
+
+  const handleGoogleSuccess = (credentialResponse) => {
+    try {
+      const decoded = jwt_decode(credentialResponse.credential);
+      
+      // Log the user information - you can see this in browser console
+      console.log('User Info:', decoded);
+      
+      // Here you would send this information to your backend
+      const userInfo = {
+        email: decoded.email,
+        name: decoded.name,
+        picture: decoded.picture,
+        // Add any other fields you need
+      };
+
+      // TODO: Send userInfo to your backend API
+      // Example:
+      // fetch('your-backend-api/auth/google', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     credential: credentialResponse.credential,
+      //     userInfo: userInfo
+      //   })
+      // });
+
+      // For now, just show success message
+      alert('Successfully signed in with Google!');
+      
+    } catch (error) {
+      console.error('Error processing Google sign-in:', error);
+      setError('Failed to process Google sign-in. Please try again.');
+    }
+  };
+
+  const handleGoogleError = () => {
+    setError('Failed to sign in with Google. Please try again.');
   };
 
   return (
@@ -82,9 +126,20 @@ const Login = ({ onSwitchForm }) => {
 
         <p>or sign in with</p>
 
-        <button type="button" className="btn google">
-          Continue with Google
-        </button>
+        <div className="google-login-container">
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            useOneTap
+            theme="filled_blue"
+            shape="rectangular"
+            size="large"
+            text="continue_with"
+            width="280px"
+          />
+        </div>
+
+        {error && <p className="error-message">{error}</p>}
 
         <p>
           <button

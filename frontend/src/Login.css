@@ -96,6 +96,20 @@ input {
   text-decoration: none;
 }
 
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.google-login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
 @media (min-width: 600px) {
   .container {
     width: 500px;
