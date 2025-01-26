@@ -1,0 +1,125 @@
+.sign-in-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensures the modal stays on top */
+  }
+  .logo-signin {
+    width: 250px; /* Adjust the width of the logo as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Centers the image inside its container */
+    margin: 0 auto 20px; /* Center the logo and add spacing below */
+  }
+  
+  .form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .checkbox-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .recaptcha {
+    margin: auto;
+  }
+  .keep-signed-in {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 5px; /* Adds a small space between checkbox and label */
+  }
+  
+  .keep-signed-in input {
+    margin: 0; /* Removes unwanted default margin */
+    padding: 0; /* Ensures no extra padding */
+    transform: scale(1.5); /* Increases the checkbox size */
+  }
+  
+  .keep-signed-in label {
+    margin-left: 10px; /* Adds a slight space between the checkbox and the label */
+  }
+  .or-divider, .create-account {
+    text-align: center; /* Centers the text */
+    width: 100%; /* Ensures the elements take full width */
+    margin-top: 1rem; /* Adds some space above */
+  }
+  
+  .or-divider {
+    margin-bottom: 1rem; /* Adds some space below the divider */
+  }
+  
+  .create-account {
+    display: block; /* Makes the link a block element */
+    margin-top: 1rem; /* Adds space above the link */
+    color: #007BFF;
+  }
+  .login-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .google-login {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f1f1f1; /* Ash (gray) background */
+    color: #333; /* Dark text color for contrast */
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+  }
+  
+  .google-logo {
+    width: 20px; /* Adjust logo size */
+    height: 20px; /* Adjust logo size */
+  }

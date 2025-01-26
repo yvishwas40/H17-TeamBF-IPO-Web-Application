@@ -1,13 +1,179 @@
-.ipo-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-    background-color: #f9f9f9;
+/* Default Layout for Large Screens */
+.ipo-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 4rem; /* Consistent spacing */
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1400px; /* Center and limit width */
+}
+
+/* Responsive Design for Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .ipo-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
-  
+
   .ipo-title {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 1.8rem; /* Adjusted for medium screens */
   }
-  
+
+  .ipo-card {
+    padding: 15px; /* Compact padding */
+  }
+
+  .drhp-btn, .rhp-btn {
+    font-size: 10px; /* Smaller buttons for medium screens */
+  }
+}
+
+/* Responsive Design for Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .ipo-container {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 1.2rem;
+    padding: 1rem;
+  }
+
+  .ipo-title {
+    font-size: 1.5rem; /* Compact font size */
+  }
+
+  .ipo-card {
+    padding: 12px;
+  }
+
+  .drhp-btn, .rhp-btn {
+    font-size: 8px; /* Reduce button size */
+    padding: 3px 6px;
+  }
+}
+
+/* Responsive Design for Very Small Screens (Phones) */
+@media (max-width: 480px) {
+  .ipo-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .ipo-title {
+    font-size: 1.2rem; /* Optimize font size */
+  }
+
+  .ipo-card {
+    padding: 8px;
+  }
+
+  .drhp-btn, .rhp-btn {
+    font-size: 6px;
+    padding: 2px 4px;
+  }
+}
+
+/* General Card Styling */
+.ipo-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.ipo-card:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
+/* Align Buttons to the Left */
+.ipo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px; /* Compact spacing */
+  margin-top: 6px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Button Styling */
+.drhp-btn, .rhp-btn {
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.drhp-btn {
+  border: 1px solid #ff4d4d;
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.rhp-btn {
+  border: 1px solid #414BEA;
+  background-color: transparent;
+  color: #414BEA;
+}
+
+.drhp-btn:hover {
+  background-color: #cc0000;
+}
+
+.rhp-btn:hover {
+  background-color: #414BEA;
+  color: #fff;
+}
+
+/* IPO Header Styling */
+.ipo-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ipo-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.ipo-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem; /* Adjusted for better scaling */
+  font-weight: bold;
+  color: #414BEA;
+}
+
+/* IPO Details Section */
+.ipo-details {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.ipo-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ipo-item p:first-child {
+  font-size: 0.7rem;
+  color: #777;
+  margin: 8px 0;
+}
+
+.ipo-item p:last-child {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0;
+}
